@@ -2,7 +2,7 @@
 
 **AI models on your own computer, in a window of their own, with no cloud.** Brebus is the app of [Janas](https://github.com/prabanta-dev/janas): chats and projects with the models of your computer, your documents searched and given to them, artifacts, code run in a cage, voice, tools, and a server for other programs. Nothing leaves the computer unless you ask it to: the models run on it, your chats and documents stay on it.
 
-![Brebus: a chat with Qwen3-30B-A3B, which made a page with a doughnut chart of a monthly budget, open beside the chat as an artifact](img/brebus.png)
+![Brebus: a chat with Qwen3.5-9B, which reasoned and made a page with a doughnut chart of a monthly budget, open beside the chat as an artifact](img/brebus.png)
 
 > **Download Brebus only from here** and from [Janas's releases](https://github.com/prabanta-dev/janas/releases). Other sites using these names are not the project's.
 
@@ -14,7 +14,7 @@
 | **Linux** x86-64, Ubuntu 22.04, Debian 12 and later | [brebus_amd64.deb](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus_amd64.deb) (`sudo apt install ./brebus_amd64.deb`), or without installing: [brebus-linux-x86_64.tar.gz](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus-linux-x86_64.tar.gz) (unpack it, start `./brebus`) |
 | **Linux** x86-64, with .rpm packages | [brebus.x86_64.rpm](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus.x86_64.rpm) (`sudo dnf install ./brebus.x86_64.rpm`) |
 
-The SHA-256 of every file: `SHA256SUMS` in the [release](https://github.com/prabanta-dev/brebus/releases/latest). Each release of Brebus is built from the sources of the [release of Janas](https://github.com/prabanta-dev/janas/releases) of the same date, by GitHub.
+The SHA-256 of every file: `SHA256SUMS` in the [release](https://github.com/prabanta-dev/brebus/releases/latest). Each release of Brebus is built from the sources of the [release of Janas](https://github.com/prabanta-dev/janas/releases) of the same version, by GitHub. Installing and removing it, step by step: [the guide](https://github.com/prabanta-dev/janas/blob/main/docs/brebus.md#install-it).
 
 - **Windows** warns that the setup is from an unknown publisher (Windows protected your PC): it is not signed yet. *More info*, then *Run anyway*.
 - **Linux**: the .deb and the .rpm put Brebus in `/opt/brebus-janas`, `brebus` on the PATH and in the desktop's menu; removing the package takes it all away (your chats and models are yours, in your home). The window is WebKitGTK's (`libwebkit2gtk-4.1-0` on Debian and Ubuntu, `webkit2gtk4.1` with .rpm, both recommended by the packages); where it is missing, or there is no display, Brebus opens its page in the browser.
@@ -26,14 +26,17 @@ The SHA-256 of every file: `SHA256SUMS` in the [release](https://github.com/prab
 - **Replies written in full Markdown**: lists, tables, task lists, quotes, code, formulas. The reader passes all 652 examples of the CommonMark 0.31.2 specification and the 51 of GitHub's extensions.
 - **Long chats**: when a chat fills the model's memory, the model summarizes the earlier messages and goes on from the summary; how much it keeps in mind is chosen in tokens, up to what each model takes (262,144 for Qwen3.5).
 - **Reasoning** seen while the model works, turned on or off for each chat, for the models that reason.
+- **Every message a point to go back to**: change a question and ask again, go back to it, or branch a new chat from a reply to try another way.
 - **Artifacts**: pages, apps, charts and documents made by the model open beside the chat, each with its versions and its own zoom.
 - **Run code**: Python run by the model in a cage, with no network and no access to your files beyond the project.
 - **Voice**: speech to text with Whisper, replies read aloud.
 - **Tools**: Janas's services (weather, maps, files, git, Wikipedia...) and any MCP server.
 - **A server for other programs**: the model loaded answers editors and other apps through an API that follows OpenAI's, Ollama's and Anthropic's.
+- **Started at login**, if you like, without its window: the model you used last ready for other programs.
 - **Served from a browser**, to the users of a machine, with a login, a second factor and HTTPS.
+- **The size of the whole window** at the side bar's foot, or with Ctrl+wheel.
 
-The guide to all of it: [docs/brebus.md](https://github.com/prabanta-dev/janas/blob/main/docs/brebus.md).
+The guide to all of it, from installing it to every button, with what to do when something goes wrong: [docs/brebus.md](https://github.com/prabanta-dev/janas/blob/main/docs/brebus.md).
 
 ## How it works
 
@@ -43,4 +46,4 @@ Brebus is a small program that shows its page in a window (WebView2 on Windows, 
 
 Brebus is part of **Janas**: its sources, documentation and issues are at [github.com/prabanta-dev/janas](https://github.com/prabanta-dev/janas) (`src/brebus/`). **A problem with Brebus, or an idea: [open an issue at Janas](https://github.com/prabanta-dev/janas/issues/new)**, saying it is about Brebus, its version (Info) and your system. This repository only hosts the releases: its issues send you there.
 
-Brebus and Janas are free software under the GNU General Public License, version 3 or later ([LICENSE](LICENSE)), by **Maurizio "camauri" Cammalleri**. *Brebus*, in Sardinian, are the magic words of the *janas*.
+Brebus and Janas are free software under the GNU General Public License, version 3 or later ([LICENSE](LICENSE)), by **Maurizio "camauri" Cammalleri**.
