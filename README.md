@@ -14,6 +14,8 @@
 | **Linux** x86-64, Ubuntu 22.04, Debian 12 and later | [brebus_amd64.deb](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus_amd64.deb) (`sudo apt install ./brebus_amd64.deb`), or without installing: [brebus-linux-x86_64.tar.gz](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus-linux-x86_64.tar.gz) (unpack it, start `./brebus`) |
 | **Linux** x86-64, with .rpm packages | [brebus.x86_64.rpm](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus.x86_64.rpm) (`sudo dnf install ./brebus.x86_64.rpm`) |
 | **Linux** x86-64, Arch and the systems made from it (CachyOS, EndeavourOS, Manjaro...) | [brebus.x86_64.pkg.tar.zst](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus.x86_64.pkg.tar.zst) (`sudo pacman -U ./brebus.x86_64.pkg.tar.zst`) |
+| **Linux** x86-64, any distribution with the C library of Ubuntu 22.04 or later | [brebus-x86_64.AppImage](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus-x86_64.AppImage) (`chmod +x`, then start it: one file, nothing installed) |
+| **Linux on 64-bit ARM**, Ubuntu 22.04, Debian 12 and later | [brebus-linux-aarch64.tar.gz](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus-linux-aarch64.tar.gz) (unpack it, start `./brebus`) |
 
 The SHA-256 of every file: `SHA256SUMS` in the [release](https://github.com/prabanta-dev/brebus/releases/latest). Each release of Brebus is built from the sources of the [release of Janas](https://github.com/prabanta-dev/janas/releases) of the same version, by GitHub. Installing and removing it, step by step: [the guide](https://github.com/prabanta-dev/janas/blob/main/docs/brebus.md#install-it).
 
