@@ -17,6 +17,8 @@
 | **Linux** x86-64, any distribution with the C library of Ubuntu 22.04 or later | [brebus-x86_64.AppImage](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus-x86_64.AppImage) (`chmod +x`, then start it: one file, nothing installed) |
 | **Linux on 64-bit ARM**, Ubuntu 22.04, Debian 12 and later | [brebus-linux-aarch64.tar.gz](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus-linux-aarch64.tar.gz) (unpack it, start `./brebus`) |
 
+
+**macOS (Apple Silicon) and Windows on 64-bit ARM**: Brebus comes there later: its window for macOS is still to be written, and on Windows on ARM it has not been tried yet. Janas, its engine and programs, already runs there: [janas-macos-arm64.tar.gz](https://github.com/prabanta-dev/janas/releases/latest/download/janas-macos-arm64.tar.gz) and [janas-windows-aarch64.zip](https://github.com/prabanta-dev/janas/releases/latest/download/janas-windows-aarch64.zip).
 The SHA-256 of every file: `SHA256SUMS` in the [release](https://github.com/prabanta-dev/brebus/releases/latest). Each release of Brebus is built from the sources of the [release of Janas](https://github.com/prabanta-dev/janas/releases) of the same version, by GitHub. Installing and removing it, step by step: [the guide](https://github.com/prabanta-dev/janas/blob/main/docs/brebus.md#install-it).
 
 - **Windows** warns that the setup is from an unknown publisher (Windows protected your PC): it is not signed yet. *More info*, then *Run anyway*.
