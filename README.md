@@ -13,11 +13,12 @@
 | **Windows** 10 (1903 or later) and 11, x86-64 | [brebus-windows-x86_64-setup.exe](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus-windows-x86_64-setup.exe), or without installing: [brebus-windows-x86_64.zip](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus-windows-x86_64.zip) (unpack it, start `brebus.exe`) |
 | **Linux** x86-64, Ubuntu 22.04, Debian 12 and later | [brebus_amd64.deb](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus_amd64.deb) (`sudo apt install ./brebus_amd64.deb`), or without installing: [brebus-linux-x86_64.tar.gz](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus-linux-x86_64.tar.gz) (unpack it, start `./brebus`) |
 | **Linux** x86-64, with .rpm packages | [brebus.x86_64.rpm](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus.x86_64.rpm) (`sudo dnf install ./brebus.x86_64.rpm`) |
+| **Linux** x86-64, Arch and the systems made from it (CachyOS, EndeavourOS, Manjaro...) | [brebus.x86_64.pkg.tar.zst](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus.x86_64.pkg.tar.zst) (`sudo pacman -U ./brebus.x86_64.pkg.tar.zst`) |
 
 The SHA-256 of every file: `SHA256SUMS` in the [release](https://github.com/prabanta-dev/brebus/releases/latest). Each release of Brebus is built from the sources of the [release of Janas](https://github.com/prabanta-dev/janas/releases) of the same version, by GitHub. Installing and removing it, step by step: [the guide](https://github.com/prabanta-dev/janas/blob/main/docs/brebus.md#install-it).
 
 - **Windows** warns that the setup is from an unknown publisher (Windows protected your PC): it is not signed yet. *More info*, then *Run anyway*.
-- **Linux**: the .deb and the .rpm put Brebus in `/opt/brebus-janas`, `brebus` on the PATH and in the desktop's menu; removing the package takes it all away (your chats and models are yours, in your home). The window is WebKitGTK's (`libwebkit2gtk-4.1-0` on Debian and Ubuntu, `webkit2gtk4.1` with .rpm, both recommended by the packages); where it is missing, or there is no display, Brebus opens its page in the browser.
+- **Linux**: the .deb, the .rpm and the pacman package put Brebus in `/opt/brebus-janas`, `brebus` on the PATH and in the desktop's menu; removing the package takes it all away (your chats and models are yours, in your home). The window is WebKitGTK's (`libwebkit2gtk-4.1-0` on Debian and Ubuntu, `webkit2gtk4.1` with .rpm, `webkit2gtk-4.1` on Arch, recommended by the packages); where it is missing, or there is no display, Brebus opens its page in the browser.
 
 ## What it does
 
