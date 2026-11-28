@@ -18,7 +18,7 @@
 | **Linux on 64-bit ARM**, Ubuntu 22.04, Debian 12 and later | [brebus-linux-aarch64.tar.gz](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus-linux-aarch64.tar.gz) (unpack it, start `./brebus`) |
 
 
-**macOS (Apple Silicon) and Windows on 64-bit ARM**: Brebus comes there later: its window for macOS is still to be written, and on Windows on ARM it has not been tried yet. Janas, its engine and programs, already runs there: [janas-macos-arm64.tar.gz](https://github.com/prabanta-dev/janas/releases/latest/download/janas-macos-arm64.tar.gz) and [janas-windows-aarch64.zip](https://github.com/prabanta-dev/janas/releases/latest/download/janas-windows-aarch64.zip).
+**macOS (Apple Silicon) and Windows on 64-bit ARM**: Brebus comes there later: its window for macOS is built but not yet tried on a Mac's screen, and on Windows on ARM it has not been tried yet. Janas, its engine and programs, already runs there: [janas-macos-arm64.tar.gz](https://github.com/prabanta-dev/janas/releases/latest/download/janas-macos-arm64.tar.gz) and [janas-windows-aarch64.zip](https://github.com/prabanta-dev/janas/releases/latest/download/janas-windows-aarch64.zip).
 The SHA-256 of every file: `SHA256SUMS` in the [release](https://github.com/prabanta-dev/brebus/releases/latest). Each release of Brebus is built from the sources of the [release of Janas](https://github.com/prabanta-dev/janas/releases) of the same version, by GitHub. Installing and removing it, step by step: [the guide](https://github.com/prabanta-dev/janas/blob/main/docs/brebus.md#install-it).
 
 - **Windows** warns that the setup is from an unknown publisher (Windows protected your PC): it is not signed yet. *More info*, then *Run anyway*.
@@ -26,7 +26,7 @@ The SHA-256 of every file: `SHA256SUMS` in the [release](https://github.com/prab
 
 ## What it does
 
-- **The models**: a catalog of models already converted, and any model of Hugging Face, downloaded and checked; each file of the Hub says how far it is from running on this computer. Several models loaded at once, each chosen in a click.
+- **The models**: a catalog of models already converted, and any model of Hugging Face, downloaded and checked; each file of the Hub says how far it is from running on this computer, and its licence is shown before it is downloaded. Each model's card, and its own sampling, in My models. Several models loaded at once, each chosen in a click.
 - **Chats and projects**: a project works in a folder of yours. Your documents there - PDF, Word, Excel, PowerPoint, LibreOffice, web pages, EPUB - are searched before each question and given to the model with their names.
 - **Replies written in full Markdown**: lists, tables, task lists, quotes, code, formulas. The reader passes all 652 examples of the CommonMark 0.31.2 specification and the 51 of GitHub's extensions.
 - **Long chats**: when a chat fills the model's memory, the model summarizes the earlier messages and goes on from the summary; how much it keeps in mind is chosen in tokens, up to what each model takes (262,144 for Qwen3.5).
@@ -35,11 +35,14 @@ The SHA-256 of every file: `SHA256SUMS` in the [release](https://github.com/prab
 - **Artifacts**: pages, apps, charts and documents made by the model open beside the chat, each with its versions and its own zoom.
 - **Run code**: Python run by the model in a cage, with no network and no access to your files beyond the project.
 - **Voice**: speech to text with Whisper, replies read aloud.
-- **Tools**: Janas's services (weather, maps, files, git, Wikipedia...) and any MCP server.
+- **Tools**: Janas's services (weather, maps, files, git, Wikipedia...) and any MCP server; connectors found in MCP's official registry, skills from any GitHub repository. A call that needs your leave says in words what it will do.
+- **The tools' views** (MCP Apps): a tool's result shown beside the chat as a page - earthquakes, aircraft, routes, public transport and places on a map that fills the pane, with a circle that filters its list; Wikipedia's pages as Wikipedia writes them; the forecast as days and a 48-hour chart; prices over time as a chart. Tables exported (CSV, TSV, JSON, Markdown), maps saved (PNG, SVG), the earthquakes, the aircraft and the prices updated by themselves.
 - **A server for other programs**: the model loaded answers editors and other apps through an API that follows OpenAI's, Ollama's and Anthropic's.
 - **Started at login**, if you like, without its window: the model you used last ready for other programs.
 - **Served from a browser**, to the users of a machine, with a login, a second factor and HTTPS.
 - **The size of the whole window** at the side bar's foot, or with Ctrl+wheel.
+- **In English, French, German, Italian, Portuguese and Spanish**, as the system or as you choose.
+- **It updates itself** from this page's releases, installing only a release signed by the project's key (or only tells you, or not at all: Settings).
 
 The guide to all of it, from installing it to every button, with what to do when something goes wrong: [docs/brebus.md](https://github.com/prabanta-dev/janas/blob/main/docs/brebus.md).
 
