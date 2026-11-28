@@ -13,7 +13,7 @@
 | **Windows** 10 (1903 or later) and 11, x86-64 | [brebus-windows-x86_64-setup.exe](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus-windows-x86_64-setup.exe), or without installing: [brebus-windows-x86_64.zip](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus-windows-x86_64.zip) (unpack it, start `brebus.exe`) |
 | **Linux** x86-64, Ubuntu 22.04, Debian 12 and later | [brebus_amd64.deb](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus_amd64.deb) (`sudo apt install ./brebus_amd64.deb`), or without installing: [brebus-linux-x86_64.tar.gz](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus-linux-x86_64.tar.gz) (unpack it, start `./brebus`) |
 | **Linux** x86-64, with .rpm packages | [brebus.x86_64.rpm](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus.x86_64.rpm) (`sudo dnf install ./brebus.x86_64.rpm`) |
-| **Linux** x86-64, Arch and the systems made from it (CachyOS, EndeavourOS, Manjaro...) | [brebus.x86_64.pkg.tar.zst](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus.x86_64.pkg.tar.zst) (`sudo pacman -U ./brebus.x86_64.pkg.tar.zst`) |
+| **Linux** x86-64, Arch and the systems made from it (CachyOS, EndeavourOS, Manjaro...) | Brebus's pacman repository, [below](#arch-linux-the-repository): `pacman -Syu` keeps it updated. Or the package alone, not updated: [brebus.x86_64.pkg.tar.zst](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus.x86_64.pkg.tar.zst) (`sudo pacman -U ./brebus.x86_64.pkg.tar.zst`) |
 | **Linux** x86-64, any distribution with the C library of Ubuntu 22.04 or later | [brebus-x86_64.AppImage](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus-x86_64.AppImage) (`chmod +x`, then start it: one file, nothing installed) |
 | **Linux on 64-bit ARM**, Ubuntu 22.04, Debian 12 and later | [brebus-linux-aarch64.tar.gz](https://github.com/prabanta-dev/brebus/releases/latest/download/brebus-linux-aarch64.tar.gz) (unpack it, start `./brebus`) |
 
@@ -23,6 +23,20 @@ The SHA-256 of every file: `SHA256SUMS` in the [release](https://github.com/prab
 
 - **Windows** warns that the setup is from an unknown publisher (Windows protected your PC): it is not signed yet. *More info*, then *Run anyway*.
 - **Linux**: the .deb, the .rpm and the pacman package put Brebus in `/opt/brebus-janas`, `brebus` on the PATH and in the desktop's menu; removing the package takes it all away (your chats and models are yours, in your home). The window is WebKitGTK's (`libwebkit2gtk-4.1-0` on Debian and Ubuntu, `webkit2gtk4.1` with .rpm, `webkit2gtk-4.1` on Arch, recommended by the packages); where it is missing, or there is no display, Brebus opens its page in the browser.
+
+### Arch Linux: the repository
+
+Each release carries a pacman repository (`brebus.db`, `brebus.files`, the package under pacman's name), signed by the project's key, fingerprint `F11E 7105 999E 8A5D F89A 39E4 C18A 5C8C A861 8649`. Once:
+
+```sh
+curl -LO https://github.com/prabanta-dev/brebus/releases/latest/download/brebus-pacman.asc
+sudo pacman-key --add brebus-pacman.asc
+sudo pacman-key --lsign-key F11E7105999E8A5DF89A39E4C18A5C8CA8618649
+printf '\n[brebus]\nServer = https://github.com/prabanta-dev/brebus/releases/latest/download\n' | sudo tee -a /etc/pacman.conf
+sudo pacman -Syu brebus-janas
+```
+
+From then on `sudo pacman -Syu` updates Brebus with the rest of the system; with pacman's default signature level a package the key did not sign is refused. Tried in clean systems of Arch Linux and CachyOS. To leave it: `sudo pacman -R brebus-janas`, the `[brebus]` lines out of `/etc/pacman.conf`, `sudo pacman-key --delete F11E7105999E8A5DF89A39E4C18A5C8CA8618649`.
 
 ## What it does
 
@@ -42,7 +56,7 @@ The SHA-256 of every file: `SHA256SUMS` in the [release](https://github.com/prab
 - **Served from a browser**, to the users of a machine, with a login, a second factor and HTTPS.
 - **The size of the whole window** at the side bar's foot, or with Ctrl+wheel.
 - **In English, French, German, Italian, Portuguese and Spanish**, as the system or as you choose.
-- **It updates itself** from this page's releases, installing only a release signed by the project's key (or only tells you, or not at all: Settings).
+- **It updates itself** from this page's releases, installing only a release signed by the project's key (or only tells you, or not at all: Settings): the setup, the .zip, the AppImage and the .tar.gz. The .deb, the .rpm and the pacman package are the system's to update, and Brebus tells you a new version is out; on Arch, [Brebus's repository](#arch-linux-the-repository) lets `pacman -Syu` do it.
 
 The guide to all of it, from installing it to every button, with what to do when something goes wrong: [docs/brebus.md](https://github.com/prabanta-dev/janas/blob/main/docs/brebus.md).
 
